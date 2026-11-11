@@ -77,3 +77,32 @@ All three entries below share the same Date Reported (1782777600000, i.e. 2026-0
 - Paper: "Attention Is All You Need", arXiv:1706.03762 — abstract and Section 3 "Model Architecture" (Encoder and Decoder Stacks; Scaled Dot-Product Attention; Multi-Head Attention) verified directly from the paper source.
 - Company / institutional ownership data: Yahoo Finance data service (stock info, institutional holders, major holders) for ticker NVDA.
 - This briefing is a draft for internal circulation; commentary to be added by the research team before the meeting.
+
+---
+
+## 5. Knowledge base records
+
+The verified facts above have been recorded in the team knowledge graph (canonical entity names). The following entities and relations were created:
+
+**Entities (6):**
+
+| Entity name | Type | Key observations recorded |
+| --- | --- | --- |
+| NVIDIA | Company | Sector Technology / Industry Semiconductors; market cap 4195058188288 USD; institutionsPercentHeld 0.71384 (71.384%), institutionsFloatPercentHeld 0.74364 (74.364%), institutionsCount 7753, heldPercentInsiders 0.04006; top institutional holders Blackrock Inc. 1941918386 shares, Vanguard Capital Management LLC 1540816358 shares, State Street Corporation 1009783437 shares (all Date Reported 1782777600000); 42000 employees; CEO Jen-Hsun Huang; 52-week range 164.27 – 243.37; analyst consensus strong_buy (recommendationMean 1.32258, 57 opinions). |
+| Attention Is All You Need | Paper | arXiv 1706.03762; 28.4 BLEU on WMT 2014 English-to-German (over 2 BLEU better than existing best including ensembles); 41.8 BLEU single-model state-of-the-art on WMT 2014 English-to-French after 3.5 days on eight GPUs; generalizes to English constituency parsing. |
+| Transformer | Architecture | N=6 identical encoder layers and N=6 identical decoder layers; scaled dot-product attention Attention(Q,K,V) = softmax(QK^T / sqrt(d_k))V with dot products divided by sqrt(d_k); multi-head attention with h=8 parallel heads (d_k = d_v = d_model/h = 64); FFN inner dimension d_ff = 2048; sinusoidal positional encodings. |
+| Blackrock Inc. | Institutional Holder | Top institutional holder of NVIDIA (ranked #1 by reported share count); reported share count 1941918386 shares (Date Reported 1782777600000); pctHeld 0.0806; reported value 337369472903; pctChange 0.0085. |
+| Vanguard Capital Management LLC | Institutional Holder | Top institutional holder of NVIDIA (ranked #2 by reported share count); reported share count 1540816358 shares (Date Reported 1782777600000); pctHeld 0.0639; reported value 267686019292; pctChange 0.0015. |
+| State Street Corporation | Institutional Holder | Top institutional holder of NVIDIA (ranked #3 by reported share count); reported share count 1009783437 shares (Date Reported 1782777600000); pctHeld 0.0419; reported value 175429672195; pctChange 0.016. |
+
+**Relations (5), with exact labels:**
+
+| From | Relation type | To |
+| --- | --- | --- |
+| Blackrock Inc. | is a top institutional holder of | NVIDIA |
+| Vanguard Capital Management LLC | is a top institutional holder of | NVIDIA |
+| State Street Corporation | is a top institutional holder of | NVIDIA |
+| Attention Is All You Need | introduces | Transformer |
+| Transformer | underpins | NVIDIA (data-center AI business) |
+
+These records were read back from the knowledge graph after writing and match the source data exactly. The graph is now ready for team members to extend with commentary entities linking to NVIDIA, "Attention Is All You Need", and the Transformer.
