@@ -71,3 +71,30 @@
 
 - Paper: **"Attention Is All You Need"**, arXiv identifier **1706.03762** — https://arxiv.org/abs/1706.03762 (abstract and Model Architecture section verified via arXiv LaTeX source).
 - Company data: Yahoo Finance market data for **NVDA** (stock profile, institutional ownership, and institutional holder breakdowns as returned by the data service; figures reported exactly as returned, not rounded or converted).
+
+---
+
+## 5. Knowledge Base Records
+
+The verified facts above have been recorded in the team knowledge graph (canonical entity names). Entities created:
+
+| Entity name | Type | Key observations recorded |
+| --- | --- | --- |
+| NVIDIA | Company | Sector Technology / Industry Semiconductors; market cap 4195058188288 USD; institutionsPercentHeld 0.71384 (71.384%); institutionsCount 7753; insidersPercentHeld 0.04006; ~42000 employees; HQ Santa Clara, CA; data-center scale AI infrastructure company; top holders Blackrock Inc. (1941918386 shares), Vanguard Capital Management LLC (1540816358), State Street Corporation (1009783437). |
+| Attention Is All You Need | Paper | arXiv:1706.03762; 28.4 BLEU on WMT 2014 English-to-German (over 2 BLEU better than prior best including ensembles); 41.8 BLEU on WMT 2014 English-to-French (new single-model SOTA, 3.5 days on 8 GPUs); generalizes to English constituency parsing. |
+| Transformer | Architecture | Encoder stack N=6 identical layers (multi-head self-attention + position-wise FFN); decoder stack N=6 identical layers (adds third sub-layer for encoder-decoder attention); scaled dot-product attention Attention(Q,K,V) = softmax(QK^T/√d_k)V; multi-head attention with h=8 parallel heads, d_k=d_v=64, d_model=512, d_ff=2048; sinusoidal positional encodings. |
+| Blackrock Inc. | Institutional Holder | Top institutional holder of NVIDIA; most recently reported shares: 1941918386; pctHeld 0.0806; reported value 337369472903; pctChange 0.0085; Date Reported epoch 1782777600000. |
+| Vanguard Capital Management LLC | Institutional Holder | Top institutional holder of NVIDIA; most recently reported shares: 1540816358; pctHeld 0.0639; reported value 267686019292; pctChange 0.0015; Date Reported epoch 1782777600000. |
+| State Street Corporation | Institutional Holder | Top institutional holder of NVIDIA; most recently reported shares: 1009783437; pctHeld 0.0419; reported value 175429672195; pctChange 0.016; Date Reported epoch 1782777600000. |
+
+Relations created (exact labels):
+
+| From | Relation | To |
+| --- | --- | --- |
+| Blackrock Inc. | is a top institutional holder of | NVIDIA |
+| Vanguard Capital Management LLC | is a top institutional holder of | NVIDIA |
+| State Street Corporation | is a top institutional holder of | NVIDIA |
+| Attention Is All You Need | introduces | Transformer |
+| Transformer | underpins | NVIDIA's data-center AI business |
+
+*Knowledge graph read back and verified after population: 6 entities and 5 relations stored as listed above.*
